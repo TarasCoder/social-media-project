@@ -1,0 +1,8 @@
+.dialog a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.dialog img {
+    width: 30px;
+    margin-right: 10px;
+}

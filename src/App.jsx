@@ -5,16 +5,26 @@ import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar />
+        <Navbar state={props.state.sidebar}/>
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/dialogs/*" element={<Dialogs />}/>
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/dialogs/*"
+              element={
+                <Dialogs
+                  state={props.state.dialogsPage}
+                />
+              }
+            />
+            <Route
+              path="/profile"
+              element={<Profile state={props.state.profilePage} />}
+            />
           </Routes>
         </div>
       </div>

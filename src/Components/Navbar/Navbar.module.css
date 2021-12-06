@@ -8,3 +8,11 @@
   color: white;
   text-decoration: none;
 }
+.friends {
+  color: white;
+}
+.friendsBlock{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
