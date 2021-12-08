@@ -7,15 +7,24 @@ function MyPosts(props) {
   let newPostElement = React.createRef();
 
   function handleClick() {
+    props.addPost();
+  }
+  function onPostChange() {
     let text = newPostElement.current.value;
-    console.log(text);
+    props.updateNewPostText(text);
   }
   return (
     <div className={s.postBlock}>
       <h3>My Posts</h3>
       <div className={s.inputZone}>
         <div>
-          <textarea ref={newPostElement} cols="25" rows="4"></textarea>
+          <textarea
+            onChange={onPostChange}
+            ref={newPostElement}
+            cols="25"
+            rows="4"
+            value={props.newPostText}
+          />
         </div>
         <div>
           <button onClick={handleClick}>Add post</button>

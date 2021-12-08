@@ -10,20 +10,22 @@ function App(props) {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar state={props.state.sidebar}/>
+        <Navbar state={props.state.sidebar} />
         <div className="app-wrapper-content">
           <Routes>
             <Route
               path="/dialogs/*"
-              element={
-                <Dialogs
-                  state={props.state.dialogsPage}
-                />
-              }
+              element={<Dialogs state={props.state.dialogsPage} />}
             />
             <Route
               path="/profile"
-              element={<Profile state={props.state.profilePage} />}
+              element={
+                <Profile
+                  profilePage={props.state.profilePage}
+                  addPost={props.addPost}
+                  updateNewPostText={props.updateNewPostText}
+                />
+              }
             />
           </Routes>
         </div>
